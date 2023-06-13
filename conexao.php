@@ -1,5 +1,5 @@
 <?php
-$con =  mysqli_connect("servidor". "host","","");
+$con =  mysqli_connect("bancophp". "host","","");
     if ($con) {
         echo("Conexão Inválida!".mysqli_error($con));
     };
