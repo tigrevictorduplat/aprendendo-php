@@ -6,7 +6,7 @@ $cep = $_GET['cep'] ;
 
 echo("Olá $nome. Suas infos são: $telefone , $endereco , $cep .");
 include("conexao.php");
-mysqli_query("INSERT INTO cadastro (Nome, Telefone, Endereco, CEP) VALUES ('$nome','$telefone','$endereco','$cep')");
+mysqli_query( $con,"INSERT INTO cadastro (Nome, Telefone, Endereco, CEP) VALUES ('$nome','$telefone','$endereco','$cep')");
 mysqli_close($con);
 
 ?>
