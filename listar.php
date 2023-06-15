@@ -16,6 +16,7 @@ $result = mysqli_query($con, "SELECT * from cadastro");
 ?>
 <table >
     <tr>
+        <th>ID</th>
         <th>NOME</th>
         <th>TELEFONE</th>
         <th>ENDERECO</th>
@@ -29,6 +30,8 @@ $result = mysqli_query($con, "SELECT * from cadastro");
         <td> <?= $row ["Telefone"]; ?> </td>
         <td> <?= $row ["Endereco"]; ?> </td>
         <td> <?= $row ["CEP"]; ?> </td>
+        <td><a href="alterar.php?id=<?= $row["ID"] ?>">ALTERAR</a></td>
+        <td><a href="deletar.php?id=<?= $row["ID"] ?>">DELETAR</a></td>
 </tr>
 <?php } ?>
 
