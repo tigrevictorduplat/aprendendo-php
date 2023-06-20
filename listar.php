@@ -33,7 +33,8 @@ $result = mysqli_query($con, "SELECT * from cadastro");
         <td><a href="alterar.php?id=<?= $row["ID"] ?>">ALTERAR</a></td>
         <td><a href="deletar.php?id=<?= $row["ID"] ?>">DELETAR</a></td>
 </tr>
-<?php } ?>
+<?php } 
+?>
 
 </table>
 </body>

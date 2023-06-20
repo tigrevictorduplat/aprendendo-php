@@ -2,9 +2,13 @@
 $id = $_GET['id'];
 include("conexao.php");
 $result = mysqli_query($con, "SELECT * from cadastro WHERE ID = '$id' ");
+$row = mysqli_fetch_array ($result);
 ?>
-<form name="form" action="listar.php" method="$POST">
+
+<form name="form" action="update.php?id=<?= $id ?>" method="$POST">
     
+    <label for="id">ID:</label>
+    <input type="text" name="id" placeholder="<?= $row["ID"]; ?>" readonly> <br>
     <label for="name">Nome:</label>
     <input type="text" name="nome" placeholder="<?= $row["Nome"]; ?>"> <br>
 
