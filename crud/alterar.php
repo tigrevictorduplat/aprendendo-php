@@ -12,24 +12,33 @@ include("conexao.php");
 $result = mysqli_query($con, "SELECT * from cadastro WHERE ID = '$id' ");
 $row = mysqli_fetch_array ($result);
 ?>
+<table>
 <form name="form" action="update.php" method="$_GET">
-    <label for="id">ID:</label>
-    <input type="text" name="id" value="<?= $row["ID"]; ?>" readonly> <br>
-    <label for="name">Nome:</label>
-    <input type="text" name="nome" value="<?= $row["Nome"]; ?>"> <br>
-
-    <label for="telefone">Telefone:</label>
-    <input type="text" name="telefone" value="<?= $row["Telefone"]; ?>"> <br>
-
-    <label for="endereco">Endereço: </label>
-    <input type="text" name="endereco" value="<?= $row["Endereco"]; ?>"> <br>
-
-    <label for="cep">CEP:</label>
-    <input type="text" name="cep" value="<?= $row["CEP"]; ?>">
-    <br>
-    <br>
-    <input type="submit" value="SALVAR">
-</form>   
+    <tr>
+        <td><label for="id">ID:</label></td>
+        <td><input type="text" name="id" value="<?= $row["ID"]; ?>" readonly></td>
+    </tr> 
+    <tr>
+        <td><label for="name">Nome:</label></td>
+        <td><input type="text" name="nome" value="<?= $row["Nome"]; ?>"> </td>
+    </tr>
+    <tr>
+        <td><label for="telefone">Telefone:</label></td>
+        <td><input type="text" name="telefone" value="<?= $row["Telefone"]; ?>"> </td>
+    </tr>
+    <tr>
+        <td><label for="endereco">Endereço: </label></td>
+        <td><input type="text" name="endereco" value="<?= $row["Endereco"]; ?>"> </td>
+    </tr>
+    <tr>
+        <td><label for="cep">CEP:</label></td>
+        <td><input type="text" name="cep" value="<?= $row["CEP"]; ?>"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="submit" value="SALVAR"></td>
+    </tr>    
+</form>
+</table>   
 </body>
 </html>
 
