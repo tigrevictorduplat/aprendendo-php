@@ -1,5 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar Dados</title>
+</head>
+<body>
 <?php
-
 $id = $_GET['id'];
 $nome = $_GET['nome'];
 $telefone = $_GET['telefone'] ;
@@ -14,3 +21,8 @@ mysqli_query($con,
 "DELETE FROM cadastro  WHERE ID = '$id' ");
 echo("Olá $nome. Suas infos: $telefone , $endereco , $cep . Foram excluidos com sucesso!");
 ?>
+<p><a href="inserir.php">Clique aqui para inserir outros valores</a></p>
+<p>ou</p>
+<p><a href="listar.php">Clique aqui para ver os valores existentes</a></p>
+</body>
+</html>

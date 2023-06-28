@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Listando Dados</title>
 </head>
-<body>
-    
-
+<style>
+    .container{
+        margin: 25px 30%;
+    }
+    .container td {
+        padding: 0.25em;
+    }
+    table {
+        background-color: lightgray;
+        text-align: center;
+    }
+</style>
+<body>    
 <?php
 include ("conexao.php");
 $result = mysqli_query($con, "SELECT * from cadastro");
-
-
 ?>
+<div class="container">
 <table >
     <tr>
         <th>ID</th>
@@ -35,7 +44,10 @@ $result = mysqli_query($con, "SELECT * from cadastro");
 </tr>
 <?php } 
 ?>
-
+    <tr style="text-align:center;">
+        <td colspan="7"><a href="inserir.php">INSERIR NOVOS DADOS</a></td>
+    </tr>
 </table>
+</div>
 </body>
 </html>

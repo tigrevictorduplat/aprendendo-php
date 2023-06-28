@@ -1,12 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando Dados</title>
+</head>
+<body>
 <?php 
 $id = $_GET["id"];
 include("conexao.php");
 $result = mysqli_query($con, "SELECT * from cadastro WHERE ID = '$id' ");
 $row = mysqli_fetch_array ($result);
 ?>
-
 <form name="form" action="update.php" method="$_GET">
-    
     <label for="id">ID:</label>
     <input type="text" name="id" value="<?= $row["ID"]; ?>" readonly> <br>
     <label for="name">Nome:</label>
@@ -23,4 +29,8 @@ $row = mysqli_fetch_array ($result);
     <br>
     <br>
     <input type="submit" value="SALVAR">
-</form>
+</form>   
+</body>
+</html>
+
+
