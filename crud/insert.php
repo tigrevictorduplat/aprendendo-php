@@ -7,15 +7,22 @@
 </head>
 <body>
     <?php
-$nome = $_GET['nome'];
-$telefone = $_GET['telefone'] ;
-$endereco = $_GET['endereco'] ;
-$cep = $_GET['cep'] ;
+$nome = $_POST['nome'];
+$telefone = $_POST['telefone'] ;
+$endereco = $_POST['endereco'] ;
+$cep = $_POST['cep'];
+$login = $_POST['login'];
+$senha = $_POST['senha'];
+$email = $_POST['email'];
 
-echo("<p>Olá $nome. Suas infos: $telefone , $endereco , $cep . Foram inseridas com sucesso!</p>");
+
 include("conexao.php");
 mysqli_query( $con,"INSERT INTO cadastro (Nome, Telefone, Endereco, CEP) VALUES ('$nome','$telefone','$endereco','$cep')");
+mysqli_query( $con,"INSERT INTO tb_login (`username`,`password`,`email`) VALUES ('$login','$senha','$email')");
 mysqli_close($con);
+
+
+echo("<p>Olá $nome. Suas infos: $telefone , $endereco , $cep . Foram inseridas com sucesso!</p>");
 ?>
 <p><a href="inserir.php">Clique aqui para inserir outros valores</a></p>
 <p>ou</p>

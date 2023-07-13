@@ -7,13 +7,14 @@
 </head>
 <body>
 <?php 
-$id = $_GET["id"];
+$id = $_POST["id"];
+
 include("conexao.php");
 $result = mysqli_query($con, "SELECT * from cadastro WHERE ID = '$id' ");
 $row = mysqli_fetch_array ($result);
 ?>
 <table>
-<form name="form" action="update.php" method="$_GET">
+<form name="form" action="update.php" method="post">
     <tr>
         <td><label for="id">ID:</label></td>
         <td><input type="text" name="id" value="<?= $row["ID"]; ?>" readonly></td>
