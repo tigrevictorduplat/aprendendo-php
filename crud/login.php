@@ -1,3 +1,19 @@
+<?php
+    if(isset($_POST['login'],$_POST['senha'],$_POST['id'],$_POST['option'])) {  
+    
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
+    $id = $_POST['id'];
+    $option = $_POST['option'];
+    
+    include("conexao.php");
+    $result = mysqli_query($con, "SELECT * from tb_login WHERE ID = '$id' ");
+    $valitation = mysqli_num_rows($result);
+    if ($valitation){
+      header('location:'.$option.'php');
+    };
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +29,7 @@
 
 
     <table>
-    <form action="confirmacao.php" method="post">
+    <form action="login.php" method="post">
     <tr>
         <input hidden disabled type="text" name="id"  value="<?= $id ?>">
         <input hidden disabled type="text" name="option" value="<?= $option ?>">
